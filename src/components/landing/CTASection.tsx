@@ -1,9 +1,15 @@
- import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
  import { Button } from "@/components/ui/button";
  import { Bike, Store, ArrowRight } from "lucide-react";
+import PreRegistrationModal from "./PreRegistrationModal";
  
  const CTASection = () => {
+  const [motoboyModalOpen, setMotoboyModalOpen] = useState(false);
+  const [lojistaModalOpen, setLojistaModalOpen] = useState(false);
+
    return (
+    <>
      <section className="py-20 bg-primary relative overflow-hidden">
        {/* Background Pattern */}
        <div className="absolute inset-0 opacity-10">
@@ -29,12 +35,22 @@
            </p>
  
            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button variant="motoboy" size="xl" className="group bg-motoboy-foreground text-motoboy hover:bg-motoboy-foreground/90">
+              <Button 
+                variant="motoboy" 
+                size="lg" 
+                className="group bg-motoboy-foreground text-motoboy hover:bg-motoboy-foreground/90"
+                onClick={() => setMotoboyModalOpen(true)}
+              >
                <Bike className="w-5 h-5" />
                Sou Motoboy
                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
              </Button>
-             <Button variant="lojista" size="xl" className="group">
+              <Button 
+                variant="lojista" 
+                size="lg" 
+                className="group"
+                onClick={() => setLojistaModalOpen(true)}
+              >
                <Store className="w-5 h-5" />
                Sou Lojista
                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -43,6 +59,18 @@
          </motion.div>
        </div>
      </section>
+
+    <PreRegistrationModal 
+      open={motoboyModalOpen} 
+      onOpenChange={setMotoboyModalOpen} 
+      type="motoboy" 
+    />
+    <PreRegistrationModal 
+      open={lojistaModalOpen} 
+      onOpenChange={setLojistaModalOpen} 
+      type="lojista" 
+    />
+    </>
    );
  };
  
