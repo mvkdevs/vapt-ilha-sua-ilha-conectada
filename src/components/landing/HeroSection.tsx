@@ -1,11 +1,17 @@
- import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
  import { Button } from "@/components/ui/button";
  import { Bike, Store, ArrowRight } from "lucide-react";
- import heroImage from "@/assets/hero-motoboy.jpg";
- import logo from "@/assets/logo-vapt-ilha.jpeg";
+import heroImage from "@/assets/hero-motoboy.jpg";
+import logo from "@/assets/logo-vapt-ilha.png";
+import PreRegistrationModal from "./PreRegistrationModal";
  
  const HeroSection = () => {
+  const [motoboyModalOpen, setMotoboyModalOpen] = useState(false);
+  const [lojistaModalOpen, setLojistaModalOpen] = useState(false);
+
    return (
+    <>
      <section className="relative min-h-screen flex items-center overflow-hidden">
        {/* Background Image with Overlay */}
        <div 
@@ -62,20 +68,30 @@
            </motion.p>
  
            {/* CTAs */}
-           <motion.div
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.6, delay: 0.3 }}
-             className="flex flex-col sm:flex-row gap-4"
-           >
-             <Button variant="motoboy" size="xl" className="group">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Button 
+                variant="motoboy" 
+                size="lg" 
+                className="group text-sm sm:text-base whitespace-normal h-auto py-3 px-4 sm:px-6"
+                onClick={() => setMotoboyModalOpen(true)}
+              >
                <Bike className="w-5 h-5" />
-               Sou Motoboy – Quero rodar a Ilha toda
+                <span className="text-left">Sou Motoboy</span>
                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
              </Button>
-             <Button variant="lojista" size="xl" className="group">
+              <Button 
+                variant="lojista" 
+                size="lg" 
+                className="group text-sm sm:text-base whitespace-normal h-auto py-3 px-4 sm:px-6"
+                onClick={() => setLojistaModalOpen(true)}
+              >
                <Store className="w-5 h-5" />
-               Sou Lojista – Quero entregadores disponíveis
+                <span className="text-left">Sou Lojista</span>
                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
              </Button>
            </motion.div>
@@ -92,6 +108,18 @@
          </div>
        </div>
      </section>
+
+      <PreRegistrationModal 
+        open={motoboyModalOpen} 
+        onOpenChange={setMotoboyModalOpen} 
+        type="motoboy" 
+      />
+      <PreRegistrationModal 
+        open={lojistaModalOpen} 
+        onOpenChange={setLojistaModalOpen} 
+        type="lojista" 
+      />
+    </>
    );
  };
  

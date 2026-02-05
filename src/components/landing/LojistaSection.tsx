@@ -1,6 +1,8 @@
- import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
  import { Button } from "@/components/ui/button";
  import { Store, ArrowRight, CheckCircle2, Clock, Users, ThumbsUp } from "lucide-react";
+import PreRegistrationModal from "./PreRegistrationModal";
  
  const benefits = [
    { icon: Clock, text: "Mais entregas" },
@@ -9,7 +11,10 @@
  ];
  
  const LojistaSection = () => {
+  const [lojistaModalOpen, setLojistaModalOpen] = useState(false);
+
    return (
+    <>
      <section className="py-20 bg-gradient-to-br from-lojista/10 to-lojista/5">
        <div className="container">
          <div className="max-w-4xl mx-auto text-center">
@@ -62,7 +67,12 @@
              viewport={{ once: true }}
              transition={{ duration: 0.6, delay: 0.3 }}
            >
-             <Button variant="lojista" size="xl" className="group">
+              <Button 
+                variant="lojista" 
+                size="lg" 
+                className="group"
+                onClick={() => setLojistaModalOpen(true)}
+              >
                <Store className="w-5 h-5" />
                Quero meu negócio no radar
                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -71,6 +81,13 @@
          </div>
        </div>
      </section>
+
+      <PreRegistrationModal 
+        open={lojistaModalOpen} 
+        onOpenChange={setLojistaModalOpen} 
+        type="lojista" 
+      />
+    </>
    );
  };
  

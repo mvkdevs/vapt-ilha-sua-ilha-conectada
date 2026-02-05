@@ -1,6 +1,8 @@
- import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
  import { Button } from "@/components/ui/button";
  import { Check, Star, Zap, Bike, ArrowRight } from "lucide-react";
+import PreRegistrationModal from "./PreRegistrationModal";
  
  const plans = [
    {
@@ -30,7 +32,10 @@
  ];
  
  const PlansSection = () => {
+  const [motoboyModalOpen, setMotoboyModalOpen] = useState(false);
+
    return (
+    <>
      <section className="py-20 bg-muted/50">
        <div className="container">
          <motion.div
@@ -131,14 +136,26 @@
            transition={{ duration: 0.6, delay: 0.5 }}
            className="text-center"
          >
-           <Button variant="motoboy" size="xl" className="group">
+          <Button 
+            variant="motoboy" 
+            size="lg" 
+            className="group"
+            onClick={() => setMotoboyModalOpen(true)}
+          >
              <Bike className="w-5 h-5" />
-             Quero escolher meu plano e rodar a Ilha
+            Quero entrar na lista
              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
            </Button>
          </motion.div>
        </div>
      </section>
+
+    <PreRegistrationModal 
+      open={motoboyModalOpen} 
+      onOpenChange={setMotoboyModalOpen} 
+      type="motoboy" 
+    />
+    </>
    );
  };
  
