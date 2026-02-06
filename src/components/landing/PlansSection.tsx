@@ -46,7 +46,7 @@ const plans = [
       { icon: BarChart3, text: "Relatórios completos de corridas e faturamento" },
       { icon: Radio, text: "Radar sempre ativo, sem limitação de área" },
     ],
-    cta: "Menos espera. Mais corridas por turno.",
+    cta: "Menos espera. Mais corridas.",
   },
   {
     name: "Turbo",
@@ -66,7 +66,7 @@ const plans = [
       { icon: BarChart3, text: "Relatórios avançados de ganhos e performance" },
       { icon: Star, text: "Máxima exposição para lojistas bem avaliados" },
     ],
-    cta: "Você não corre atrás de pedido. O pedido aparece pra você.",
+    cta: "Você não corre atrás de pedido. O pedido te procura.",
   },
 ];
 
@@ -127,7 +127,7 @@ const PlansSection = () => {
                   {plan.name === "Start" && "🟢"} 
                   {plan.name === "Pro" && "🔵"} 
                   {plan.name === "Turbo" && "🟡"} 
-                  {" PLANO " + plan.name.toUpperCase()}
+                  {" MOTO " + plan.name.toUpperCase()}
                 </div>
 
                 <h3 className={`text-2xl font-display font-bold mb-2 ${
@@ -194,11 +194,11 @@ const PlansSection = () => {
             <Button 
               variant="motoboy" 
               size="xl" 
-              className="group"
+              className="group text-wrap"
               onClick={() => setMotoboyModalOpen(true)}
             >
               <Bike className="w-5 h-5" />
-              Escolha seu plano e rode a Ilha do seu jeito
+              Faça seu pré-cadastro e saia na frente!
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </motion.div>
