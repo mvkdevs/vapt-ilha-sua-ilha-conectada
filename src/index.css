@@ -9,6 +9,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 @layer base {
   :root {
     /* Core brand colors */
@@ -22,7 +24,7 @@
     --popover-foreground: 15 80% 15%;
 
     /* Primary: Deep Burgundy/Maroon (#5D2E46) */
-    --primary: 330 35% 28%;
+    --primary: 251 60% 31%;
     --primary-foreground: 0 0% 100%;
 
     /* Secondary: Orange/Coral (#F07C42) */
