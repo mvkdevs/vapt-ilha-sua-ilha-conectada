@@ -21,7 +21,7 @@ const GamificationSection = () => {
 
   return (
     <>
-      <section className="py-20 bg-gradient-to-b from-background to-muted/30">
+      <section className="py-20 bg-gradient-to-b from-background  bg-muted/50 ">
         <div className="container">
           {/* Header */}
           <motion.div

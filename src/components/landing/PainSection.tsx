@@ -78,7 +78,12 @@
                <p className="text-lg leading-relaxed">
                  Seu entregador saiu pra longe.
                  <br />
-                 <strong className="text-foreground">A cozinha cheia. Pedido parado. Cliente reclamando.</strong>
+                 <strong className="text-foreground">O balcão enche. Pedido parado. Cliente reclamando.</strong>
+               </p>
+               <br />
+                <p className="text-lg leading-relaxed">
+                Cliente cancela, você perde a venda, credibilidade —
+                 <span className="text-destructive font-semibold">  e dinheiro. </span>
                </p>
                <div className="pt-4 border-t border-lojista/20">
                  <p className="flex items-start gap-3">

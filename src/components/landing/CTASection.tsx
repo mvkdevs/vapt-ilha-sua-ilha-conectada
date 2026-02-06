@@ -35,19 +35,19 @@ const CTASection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="motoboy" 
-                size="lg" 
-                className="group"
+                <Button
+                  variant="motoboy"
+                  size="lg"
+                  className="group"
                 onClick={() => setMotoboyModalOpen(true)}
-              >
-                <Bike className="w-5 h-5" />
-                Sou Motoboy
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button 
-                variant="lojista" 
-                size="lg" 
+                >
+                  <Bike className="w-5 h-5" />
+                  Sou Motoboy
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              <Button
+                variant="lojista"
+                size="lg"
                 className="group"
                 onClick={() => setLojistaModalOpen(true)}
               >
@@ -60,15 +60,15 @@ const CTASection = () => {
         </div>
       </section>
 
-      <PreRegistrationModal 
-        open={motoboyModalOpen} 
-        onOpenChange={setMotoboyModalOpen} 
-        type="motoboy" 
+      <PreRegistrationModal
+        open={motoboyModalOpen}
+        onOpenChange={setMotoboyModalOpen}
+        type="motoboy"
       />
-      <PreRegistrationModal 
-        open={lojistaModalOpen} 
-        onOpenChange={setLojistaModalOpen} 
-        type="lojista" 
+      <PreRegistrationModal
+        open={lojistaModalOpen}
+        onOpenChange={setLojistaModalOpen}
+        type="lojista"
       />
     </>
   );

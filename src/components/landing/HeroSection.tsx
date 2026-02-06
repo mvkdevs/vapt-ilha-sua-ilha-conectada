@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Bike, Store, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-motoboy.jpg";
+// import heroImage from "@/assets/hero-motoboy.jpg";
+import heroImage from "@/assets/MOTOBOY_FORM_HEADER_IMG.png";
 import logo from "@/assets/logo-vapt-ilha.png";
 import PreRegistrationModal from "./PreRegistrationModal";
 
@@ -113,7 +114,7 @@ const HeroSection = () => {
                 <img 
                   src={logo} 
                   alt="Vapt Ilha" 
-                  className="relative z-10 w-64 h-auto md:w-80 lg:w-96 drop-shadow-2xl animate-float" 
+                  className="relative z-10 w-100 h-auto md:w-100 lg:w-100 drop-shadow-2xl animate-float" 
                 />
               </div>
             </motion.div>

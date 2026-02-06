@@ -75,7 +75,7 @@ const PlansSection = () => {
 
   return (
     <>
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 to-muted/30 bg-gradient-to-b from-background">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -3,9 +3,9 @@
  
  const SolutionSection = () => {
    const features = [
-     "Pedidos aparecem para quem está disponível.",
-     "Entregadores escolhem onde correr.",
-     "Lojistas nunca ficam sem opção.",
+     "Pedidos aparecem para os disponíveis mais próximos.",
+     "Entregadores são notificados e escolhem qual pedido aceitar.",
+     "Lojistas nunca ficam sem entregadores. Entregadores nunca ficam sem entregas.",
    ];
  
    return (
