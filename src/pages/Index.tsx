@@ -8,7 +8,7 @@ import LojistaSection from "@/components/landing/LojistaSection";
 import FAQSection from "@/components/landing/FAQSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
-
+import { Analytics } from "@vercel/analytics/react"
 const Index = () => {
   return (
     <main className="overflow-hidden">
@@ -22,6 +22,7 @@ const Index = () => {
       <FAQSection />
       <CTASection />
       <Footer />
+      <Analytics />
     </main>
   );
 };
