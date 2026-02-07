@@ -15,7 +15,7 @@ const HeroSection = () => {
     <>
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
@@ -57,7 +57,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl"
               >
-                O Vapt Ilha conecta lojistas e motoboys em tempo real, eliminando a 
+                O Vapt Ilha conecta lojistas e motoboys em tempo real, eliminando a
                 dependência do entregador fixo e a ociosidade de quem fica parado esperando pedido.
               </motion.p>
 
@@ -68,20 +68,20 @@ const HeroSection = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <Button 
-                  variant="motoboy" 
-                  size="lg" 
-                  className="group text-sm sm:text-base whitespace-normal h-auto py-3 px-4 sm:px-6"
+                <Button
+                  variant="motoboy"
+                  size="lg"
+                  className="group text-wrap text-sm sm:text-base whitespace-normal h-auto py-3 px-4 sm:px-6"
                   onClick={() => setMotoboyModalOpen(true)}
                 >
                   <Bike className="w-5 h-5" />
                   <span className="text-left">Sou Motoboy</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button 
-                  variant="lojista" 
-                  size="lg" 
-                  className="group text-sm sm:text-base whitespace-normal h-auto py-3 px-4 sm:px-6"
+                <Button
+                  variant="lojista"
+                  size="lg"
+                  className="group text-wraptext-sm sm:text-base whitespace-normal h-auto py-3 px-4 sm:px-6"
                   onClick={() => setLojistaModalOpen(true)}
                 >
                   <Store className="w-5 h-5" />
@@ -111,10 +111,10 @@ const HeroSection = () => {
               <div className="relative">
                 {/* Glow effect behind logo */}
                 <div className="absolute inset-0 blur-3xl bg-gradient-to-b from-secondary/30 via-accent/20 to-transparent scale-110" />
-                <img 
-                  src={logo} 
-                  alt="Vapt Ilha" 
-                  className="relative z-10 w-100 h-auto md:w-100 lg:w-100 drop-shadow-2xl animate-float" 
+                <img
+                  src={logo}
+                  alt="Vapt Ilha"
+                  className="relative z-10 w-100 h-auto md:w-100 lg:w-100 drop-shadow-2xl animate-float"
                 />
               </div>
             </motion.div>
@@ -122,15 +122,15 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <PreRegistrationModal 
-        open={motoboyModalOpen} 
-        onOpenChange={setMotoboyModalOpen} 
-        type="motoboy" 
+      <PreRegistrationModal
+        open={motoboyModalOpen}
+        onOpenChange={setMotoboyModalOpen}
+        type="motoboy"
       />
-      <PreRegistrationModal 
-        open={lojistaModalOpen} 
-        onOpenChange={setLojistaModalOpen} 
-        type="lojista" 
+      <PreRegistrationModal
+        open={lojistaModalOpen}
+        onOpenChange={setLojistaModalOpen}
+        type="lojista"
       />
     </>
   );

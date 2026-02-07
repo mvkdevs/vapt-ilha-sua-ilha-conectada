@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  Star, Trophy, TrendingUp, ArrowRight, Bike, 
+import {
+  Star, Trophy, TrendingUp, ArrowRight, Bike,
   CheckCircle, Scale, Percent, Unlock, Crown,
   Store, Clock, AlertTriangle, ThumbsUp
 } from "lucide-react";
@@ -199,7 +199,7 @@ const GamificationSection = () => {
               {/* Levels */}
               <div className="flex flex-wrap justify-center gap-4">
                 {levels.map((level, idx) => (
-                  <div 
+                  <div
                     key={level.name}
                     className="flex items-center gap-2 bg-primary-foreground/10 px-4 py-2 rounded-full"
                   >
@@ -248,10 +248,10 @@ const GamificationSection = () => {
                 </p>
               </div>
 
-              <Button 
-                variant="motoboy" 
-                size="xl" 
-                className="group"
+              <Button
+                variant="motoboy"
+                size="xl"
+                className="group text-wrap"
                 onClick={() => setMotoboyModalOpen(true)}
               >
                 <Bike className="w-5 h-5" />
@@ -263,10 +263,10 @@ const GamificationSection = () => {
         </div>
       </section>
 
-      <PreRegistrationModal 
-        open={motoboyModalOpen} 
-        onOpenChange={setMotoboyModalOpen} 
-        type="motoboy" 
+      <PreRegistrationModal
+        open={motoboyModalOpen}
+        onOpenChange={setMotoboyModalOpen}
+        type="motoboy"
       />
     </>
   );

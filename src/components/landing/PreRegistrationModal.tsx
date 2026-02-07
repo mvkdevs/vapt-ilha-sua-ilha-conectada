@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import { Bike, Store } from "lucide-react";
 import { toast } from "sonner";
+import { track } from '@vercel/analytics';
 
 interface PreRegistrationModalProps {
   open: boolean;
@@ -25,6 +26,8 @@ const PreRegistrationModal = ({ open, onOpenChange, type }: PreRegistrationModal
       toast.error("Link do formulário ainda não configurado.");
       return;
     }
+
+    track('redirect', {}, { flags: [isMotoboy ? 'Motoboy Form' : 'Lojista Form'] });
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
@@ -71,8 +74,8 @@ const PreRegistrationModal = ({ open, onOpenChange, type }: PreRegistrationModal
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 w-full px-4 mb-4">
-            <Button className="w-full" variant={isMotoboy ? "motoboy" : "lojista"} onClick={openForm}>
-              { (isMotoboy ? MOTOBOY_FORM_URL : LOJISTA_FORM_URL) ? "Abrir formulário do Google Forms" : "Link do formulário em breve" }
+            <Button className="w-full " variant={isMotoboy ? "motoboy" : "lojista"} onClick={openForm}>
+              {(isMotoboy ? MOTOBOY_FORM_URL : LOJISTA_FORM_URL) ? "Abrir formulário do Google Forms" : "Link do formulário em breve"}
             </Button>
             <Button className="w-full" variant="ghost" onClick={handleClose}>
               Cancelar

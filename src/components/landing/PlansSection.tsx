@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  Check, Star, Zap, Bike, ArrowRight, Radio, Eye, Wrench, 
-  Compass, BarChart3, Globe, Shield, Headphones, MapPin, 
-  Crown, Rocket 
+import {
+  Check, Star, Zap, Bike, ArrowRight, Radio, Eye, Wrench,
+  Compass, BarChart3, Globe, Shield, Headphones, MapPin,
+  Crown, Rocket
 } from "lucide-react";
 import PreRegistrationModal from "./PreRegistrationModal";
 
@@ -14,6 +14,7 @@ const plans = [
     tagline: "Comece a rodar sem ficar parado",
     description: "Ideal para quem está entrando agora no sistema.",
     subtitle: "Tudo o que você precisa para sair da ociosidade e começar a ganhar na Ilha:",
+    price: "19,90",
     color: "plan-start",
     colorClass: "bg-plan-start",
     borderClass: "border-plan-start",
@@ -33,6 +34,7 @@ const plans = [
     tagline: "Para quem vive da pista",
     description: "O plano de quem roda todo dia e não pode perder pedido.",
     subtitle: "Aqui você já entra em vantagem:",
+    price: "39,00",
     color: "plan-pro",
     colorClass: "bg-plan-pro",
     borderClass: "border-plan-pro",
@@ -53,6 +55,7 @@ const plans = [
     tagline: "Domine a pista",
     description: "O topo da hierarquia do Vapt Ilha.",
     subtitle: "Para quem quer estar sempre na frente, em qualquer ponto da Ilha:",
+    price: "59,90",
     color: "plan-turbo",
     colorClass: "bg-plan-turbo",
     borderClass: "border-plan-turbo",
@@ -104,11 +107,10 @@ const PlansSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative rounded-2xl p-6 lg:p-8 flex flex-col ${
-                  plan.featured
-                    ? "bg-primary text-primary-foreground border-2 border-secondary shadow-2xl lg:scale-105"
-                    : "bg-card border-2 border-border"
-                }`}
+                className={`relative rounded-2xl p-6 lg:p-8 flex flex-col ${plan.featured
+                  ? "bg-primary text-primary-foreground border-2 border-secondary shadow-2xl lg:scale-105"
+                  : "bg-card border-2 border-border"
+                  }`}
               >
                 {plan.featured && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-sm font-bold px-4 py-1 rounded-full flex items-center gap-1">
@@ -121,30 +123,35 @@ const PlansSection = () => {
                   <plan.icon className="w-7 h-7 text-white" />
                 </div>
 
-                <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${
-                  plan.featured ? "bg-secondary/20 text-secondary" : `${plan.colorClass}/10 text-${plan.color}`
-                }`}>
-                  {plan.name === "Start" && "🟢"} 
-                  {plan.name === "Pro" && "🔵"} 
-                  {plan.name === "Turbo" && "🟡"} 
+                <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${plan.featured ? "bg-secondary/20 text-secondary" : `${plan.colorClass}/10 text-${plan.color}`
+                  }`}>
+                  {plan.name === "Start" && "🟢"}
+                  {plan.name === "Pro" && "🔵"}
+                  {plan.name === "Turbo" && "🟡"}
                   {" MOTO " + plan.name.toUpperCase()}
                 </div>
 
-                <h3 className={`text-2xl font-display font-bold mb-2 ${
-                  plan.featured ? "text-primary-foreground" : "text-foreground"
-                }`}>
+                <h3 className={`text-2xl font-display font-bold mb-2 ${plan.featured ? "text-primary-foreground" : "text-foreground"
+                  }`}>
                   {plan.tagline}
                 </h3>
-                
-                <p className={`text-sm mb-2 ${
-                  plan.featured ? "text-primary-foreground/80" : "text-muted-foreground"
-                }`}>
+
+                <div className="mb-4 flex items-end gap-1">
+                  <span className={`text-3xl font-bold ${plan.featured ? "text-primary-foreground" : "text-foreground"}`}>
+                    R$ {plan.price}
+                  </span>
+                  <span className={`text-sm mb-1 ${plan.featured ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                    /mês
+                  </span>
+                </div>
+
+                <p className={`text-sm mb-2 ${plan.featured ? "text-primary-foreground/80" : "text-muted-foreground"
+                  }`}>
                   {plan.description}
                 </p>
 
-                <p className={`text-sm font-medium mb-4 ${
-                  plan.featured ? "text-primary-foreground/90" : "text-foreground/80"
-                }`}>
+                <p className={`text-sm font-medium mb-4 ${plan.featured ? "text-primary-foreground/90" : "text-foreground/80"
+                  }`}>
                   {plan.subtitle}
                 </p>
 
@@ -152,17 +159,15 @@ const PlansSection = () => {
                 <div className="space-y-3 flex-grow">
                   {plan.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <feature.icon className={`w-5 h-5 mt-0.5 shrink-0 ${
-                        plan.featured ? "text-secondary" : `text-${plan.color}`
-                      }`} style={{ color: plan.featured ? undefined : `hsl(var(--${plan.color}))` }} />
+                      <feature.icon className={`w-5 h-5 mt-0.5 shrink-0 ${plan.featured ? "text-secondary" : `text-${plan.color}`
+                        }`} style={{ color: plan.featured ? undefined : `hsl(var(--${plan.color}))` }} />
                       <div>
                         <span className={plan.featured ? "text-primary-foreground/90" : "text-foreground"}>
                           {feature.text}
                         </span>
                         {feature.highlight && (
-                          <span className={`block text-xs mt-0.5 ${
-                            plan.featured ? "text-secondary/80" : "text-muted-foreground"
-                          }`}>
+                          <span className={`block text-xs mt-0.5 ${plan.featured ? "text-secondary/80" : "text-muted-foreground"
+                            }`}>
                             ({feature.highlight})
                           </span>
                         )}
@@ -172,11 +177,10 @@ const PlansSection = () => {
                 </div>
 
                 {/* CTA Text */}
-                <div className={`text-sm font-medium px-4 py-3 rounded-lg mt-6 ${
-                  plan.featured 
-                    ? "bg-secondary/20 text-secondary" 
-                    : "bg-muted text-muted-foreground"
-                }`}>
+                <div className={`text-sm font-medium px-4 py-3 rounded-lg mt-6 ${plan.featured
+                  ? "bg-secondary/20 text-secondary"
+                  : "bg-muted text-muted-foreground"
+                  }`}>
                   👉 {plan.cta}
                 </div>
               </motion.div>
@@ -189,11 +193,11 @@ const PlansSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-center mt-12"
+            className="text-center mt-12 text-wrap"
           >
-            <Button 
-              variant="motoboy" 
-              size="xl" 
+            <Button
+              variant="motoboy"
+              size="xl"
               className="group text-wrap"
               onClick={() => setMotoboyModalOpen(true)}
             >
@@ -201,14 +205,17 @@ const PlansSection = () => {
               Faça seu pré-cadastro e saia na frente!
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Garanta acesso antecipado gratuito ao Vapt Ilha e outros bônus de Fundador.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      <PreRegistrationModal 
-        open={motoboyModalOpen} 
-        onOpenChange={setMotoboyModalOpen} 
-        type="motoboy" 
+      <PreRegistrationModal
+        open={motoboyModalOpen}
+        onOpenChange={setMotoboyModalOpen}
+        type="motoboy"
       />
     </>
   );
