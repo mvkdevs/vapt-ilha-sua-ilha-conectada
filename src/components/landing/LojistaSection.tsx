@@ -75,7 +75,7 @@ const lojistaPlans = [
       { icon: Headphones, text: "Suporte básico" },
       { icon: BarChart3, text: "Histórico de entregas" },
     ],
-    cta: "Perfeito para aprender o fluxo, ganhar avaliações e subir de nível.",
+    cta: "Ideal para aprender o fluxo e ganhar reputação.",
   },
   {
     name: "Profissional",
