@@ -3,7 +3,7 @@ import { Instagram, Facebook, Phone, Mail, MapPin, MessageCircle } from "lucide-
 
 const Footer = () => {
   return (
-    <footer className="py-16 bg-accent/100">
+    <footer className="py-16 bg-primary/95">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
