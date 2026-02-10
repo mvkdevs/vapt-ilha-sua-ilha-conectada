@@ -3,7 +3,7 @@ import { Instagram, Facebook, Phone, Mail, MapPin, MessageCircle } from "lucide-
 
 const Footer = () => {
   return (
-    <footer className="py-16 bg-accent/100">
+    <footer className="py-16 bg-primary/95">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
@@ -44,7 +44,7 @@ const Footer = () => {
             <h4 className="text-primary-foreground font-display font-bold text-lg">Redes Sociais</h4>
             <div className="flex gap-4">
               <a 
-                href="https://instagram.com/vaptilha" 
+                href="https://www.instagram.com/vapt.ilha" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors text-primary-foreground/80"

@@ -136,12 +136,10 @@ const PlansSection = () => {
                   {plan.tagline}
                 </h3>
 
-                <div className="mb-4 flex items-end gap-1">
-                  <span className={`text-3xl font-bold ${plan.featured ? "text-primary-foreground" : "text-foreground"}`}>
-                    R$ {plan.price}
-                  </span>
-                  <span className={`text-sm mb-1 ${plan.featured ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                    /mês
+                <div className="mb-4 flex items-end gap-2">
+                  <div className="h-8 w-24 animate-pulse rounded-md bg-muted/40" />
+                  <span className={`text-xs mb-1 ${plan.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                    em breve
                   </span>
                 </div>
 
